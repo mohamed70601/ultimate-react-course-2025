@@ -42,7 +42,10 @@ function Tabbed({ content }) {
       </div>
 
       {activeTab <= 2 ? (
-        <TabContent item={content.at(activeTab)} />
+        <TabContent
+          item={content.at(activeTab)}
+          key={content.at(activeTab).summary}
+        />
       ) : (
         <DifferentContent />
       )}
@@ -69,15 +72,15 @@ function TabContent({ item }) {
     setLikes(likes + 1);
   }
 
-  function handleTripleInc() {
-    // setLikes(likes + 1);
-    // setLikes(likes + 1);
-    // setLikes(likes + 1);
+  // function handleTripleInc() {
+  //   // setLikes(likes + 1);
+  //   // setLikes(likes + 1);
+  //   // setLikes(likes + 1);
 
-    setLikes((likes) => likes + 1);
-    setLikes((likes) => likes + 1);
-    setLikes((likes) => likes + 1);
-  }
+  //   setLikes((likes) => likes + 1);
+  //   setLikes((likes) => likes + 1);
+  //   setLikes((likes) => likes + 1);
+  // }
 
   return (
     <div className="tab-content">
