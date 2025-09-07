@@ -10,7 +10,7 @@ import BackButton from "./BackButton";
 import useUrlPosition from "../hooks/useUrlPosition";
 import Message from "./Message";
 import Spinner from "./Spinner";
-import { useCities } from "../contexts/Cities.Context";
+import { useCities } from "../contexts/CitiesContext";
 import { useNavigate } from "react-router-dom";
 
 export function convertToEmoji(countryCode) {
