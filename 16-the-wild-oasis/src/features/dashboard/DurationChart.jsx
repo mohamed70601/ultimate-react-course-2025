@@ -1,4 +1,7 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
+import Heading from "../../ui/Heading";
+import { Pie, PieChart, ResponsiveContainer } from "recharts";
 
 const ChartBox = styled.div`
   /* Box */
@@ -21,7 +24,7 @@ const ChartBox = styled.div`
 const startDataLight = [
   {
     duration: "1 night",
-    value: 0,
+    value: 5,
     color: "#ef4444",
   },
   {
@@ -31,7 +34,7 @@ const startDataLight = [
   },
   {
     duration: "3 nights",
-    value: 0,
+    value: 2,
     color: "#eab308",
   },
   {
@@ -69,12 +72,12 @@ const startDataDark = [
   },
   {
     duration: "2 nights",
-    value: 0,
+    value: 3,
     color: "#c2410c",
   },
   {
     duration: "3 nights",
-    value: 0,
+    value: 5,
     color: "#a16207",
   },
   {
@@ -84,7 +87,7 @@ const startDataDark = [
   },
   {
     duration: "6-7 nights",
-    value: 0,
+    value: 7,
     color: "#15803d",
   },
   {
@@ -94,7 +97,7 @@ const startDataDark = [
   },
   {
     duration: "15-21 nights",
-    value: 0,
+    value: 2,
     color: "#1d4ed8",
   },
   {
@@ -130,3 +133,18 @@ function prepareData(startData, stays) {
 
   return data;
 }
+
+function DurationChart({ confirmedStays }) {
+  return (
+    <ChartBox>
+      <Heading as="h2">Stay duration summary</Heading>
+      <ResponsiveContainer>
+        <PieChart>
+          <Pie data={startDataLight} nameKey="duration" dataKey="value" />
+        </PieChart>
+      </ResponsiveContainer>
+    </ChartBox>
+  );
+}
+
+export default DurationChart;
